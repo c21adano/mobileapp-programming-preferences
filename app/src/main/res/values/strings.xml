@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Shared Preferences</string>
+    <string name="second_activity">Second activity</string>
+    <string name="main_activity">Main activity</string>
+    <string name="next">next</string>
+    <string name="back" />
 </resources>
