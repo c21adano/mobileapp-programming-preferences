@@ -24,4 +24,19 @@
         android:text="return"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <EditText
+        android:id="@+id/TexteditThing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name" />
+
 </RelativeLayout>
