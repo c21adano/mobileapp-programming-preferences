@@ -13,8 +13,9 @@ import android.widget.EditText;
 public class SecondActivity extends AppCompatActivity {
 
     private Button button;
+    private Button buttontwo;
 
-    EditText name;
+    //EditText name;
     SharedPreferences sp;
     String TextThing;
 
@@ -23,27 +24,44 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        name = findViewById(R.id.TexteditThing);
+        //name = findViewById(R.id.TexteditThing);
         button = (Button) findViewById(R.id.buttonTwo);
+        buttontwo = (Button) findViewById(R.id.button);
 
         sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+
+
+        buttontwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+
+                EditText t1;
+                t1 = findViewById(R.id.TexteditThing);
+
+                editor.putString("TextEdit", t1.getText().toString());
+                editor.apply();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextThing = name.getText().toString();
-
-                SharedPreferences.Editor editor = sp.edit();
-
-                editor.putString("text", TextThing);
-                editor.commit();
 
                 openActivity1();
-
             }
         });
 
+
+
     }
+
+
+
+
     public void openActivity1(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
